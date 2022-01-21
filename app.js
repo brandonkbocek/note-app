@@ -1,8 +1,8 @@
-const add = require('./utils.js')
+const chalk = require('chalk')
 const myNotes = require('./notes.js')
 
-const sum = add(4,-2)
-const notes = myNotes()
 
+const notes = myNotes()
 console.log(notes)
-console.log(sum)
+
+console.log(chalk.green.bold.inverse("Success!"))

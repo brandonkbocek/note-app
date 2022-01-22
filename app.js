@@ -1,8 +1,48 @@
 const chalk = require('chalk')
+const yargs = require('yargs')
 const myNotes = require('./notes.js')
 
+//Customize yargs version
+yargs.version('1.1.0')
 
-const notes = myNotes()
-console.log(notes)
+//Create add command
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function () {
+        console.log('Adding a new note!')
+    }
+})
 
-console.log(chalk.red.bold.inverse("error"))
+//Create remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note',
+    handler: function () {
+        console.log('Removiong the note')
+    }
+})
+
+//Create list command
+yargs.command({
+    command: 'list',
+    describe: 'List the notes',
+    handler: function () {
+        console.log('Listing the notes')
+    }
+})
+
+//reate read command
+yargs.command({
+    command: 'read',
+    describe: 'reading the note',
+    handler: function () {
+        console.log('Reading the note')
+    }
+})
+
+
+
+// add, remove, read, list
+
+console.log(yargs.argv)
